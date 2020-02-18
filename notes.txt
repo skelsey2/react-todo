@@ -1,0 +1,83 @@
+2/15/2020 - Saturday
+Edit -
+
+Ternery below is too much to read, extract out to a method like in TodoItem
+ {
+                    this.state.inEditMode ?
+                        <>
+                            <input onChange={e => this.handleOnChange(e)} value={this.state.editModeTodoText}/>
+                            <button onClick={e => this.handleSaveClick(e)}>Save</button>
+                        </>
+                    :
+                        <span onClick={e => this.handleEditClick(e)}>
+                            {this.props.todo.text}
+                        </span>
+}
+
+Material Design
+
+2/13/2020 - Thursday
+AddTodoInput - need to clear text on btn click, propagate value up to AddTodoBar
+Dump Components - AddTodoInput, AddTodoBtn they don't hold state
+Smart Component - AddTodoBar, holds the state
+Controlled vs Uncontrolled - form components, input (classic interview question)
+https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/
+
+uuid generate - key set at wrapper level, <TodoItem todo={todo} key={todo.id}/>
+sloppy coding to not have the key, can leverage a pipeline to code smell and fail build without
+https://www.npmjs.com/package/uuid
+https://medium.com/@adhithiravi/why-do-i-need-keys-in-react-lists-dbb522188bbb
+
+// return with true/false, if true keeps, false removes
+const fiteredTodos = this.state.todos.filter(todo => todo.id !== todoID);
+
+Summary - made TodoItem and added delete functionality onclick of X for each TodoItem; react docs are in github, the docs are super helpful
+
+
+2/9/2020 - Sunday
+ctrl + alt + l = autoformat
+ import AddTodoBtn, { nums } from "./AddTodoBtn";   non-default requires { }; cannot have more than 1 default
+
+ return (
+     <>
+       <AddTodoInput/>
+       <AddTodoBtn/>
+     </>
+ );
+ export default AddTodoBtn
+ export const nums = 1;
+ import AddTodoBtn, { nums } from "./AddTodoBtn";   non-default requires { }; cannot have more than 1 default
+
+<AddTodoBar/> the / invokes constructor of the class, not self closes
+ Wrapper for both AddTodoInput & AddTodoBtn
+ why React.Fragment
+  have a root element, doesn't interact with the physical dom
+  React.Fragment = <>, just shorthand
+  removes the need for a div to be placed
+ but why wrap it in an element, can't return 2 things
+
+{ raw execution of js } null, false, undefine won't display anything to the screen
+   arrays are automatically rendered
+
+class vs  className = class is reserved word so they used className to not conflict
+Injecting React Components like <AddTodoBtn /> are capital
+    while React components that represent html elements are lowercase e.g. <input />
+
+
+JSX - JavaScript XML, must be valid XML not HTML
+JSX return ( here ), is the syntaxtic sugar, don't forget it is still JS
+
+file.d.ts = definitively typed definitions file, allows type ahead and docs
+
+.bind lexical context, the fn approach;
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+partial application of fn
+fn currying
+fn are 1st class citizens - fn act like any other variable
+
+Provider Pattern - maybe not a just react pattern but commonly used
+    ATBar is the provider for ATinput and ATbtn aka the wrapper/data holder
+
+
+this.setState is asynchronous, careful with click console.log with arrays...
+    https://www.freecodecamp.org/news/functional-setstate-is-the-future-of-react-374f30401b6b/
