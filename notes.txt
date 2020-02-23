@@ -1,5 +1,33 @@
-2/15/2020 - Saturday
-Edit -
+2/17/2020 - 4 - Monday
+(Next step: 1. implement working decrement button (via Redux) - new action, changes in reducer, button, etc,
+2. Reduxifying the TODO app )
+https://www.codementor.io/redirect-notice?url=https%3A%2F%2Fmiro.medium.com%2Fmax%2F874%2F1*HiTWIJ3OGLivwNZXPkzO-w.png
+Install Redux
+    npm i react-redux
+    npm i redux
+
+Actions - plain javascript object that has at least a property, like events
+    operations.js
+Reducers - fn that get called upon each dispatch of a given action and return the updated complete state
+    index.js
+constants - words like enums of actions
+    actionTypes.js
+configureStore.js - redux wiring
+modified app.js to set up a store
+component
+    counter.js
+
+counter.js file
+// onClick: () => dispatch(increment()) this is where you be invoking the operations.js file
+"never seen 2 providers aka stores in production"
+
+Higher Order Components vs @Connect using decorators
+mapStateToProps - store state not component state
+mapDispatchToProps
+dispatch - the magic fn that provided by redux wiring by mapDispatchToProps that allows you to fire actions
+
+2/15/2020 - 3 - Saturday
+Edit - added in Edited on click and save btn to todo item
 
 Ternery below is too much to read, extract out to a method like in TodoItem
  {
@@ -14,9 +42,8 @@ Ternery below is too much to read, extract out to a method like in TodoItem
                         </span>
 }
 
-Material Design
 
-2/13/2020 - Thursday
+2/13/2020 - 2 - Thursday
 AddTodoInput - need to clear text on btn click, propagate value up to AddTodoBar
 Dump Components - AddTodoInput, AddTodoBtn they don't hold state
 Smart Component - AddTodoBar, holds the state
@@ -34,7 +61,7 @@ const fiteredTodos = this.state.todos.filter(todo => todo.id !== todoID);
 Summary - made TodoItem and added delete functionality onclick of X for each TodoItem; react docs are in github, the docs are super helpful
 
 
-2/9/2020 - Sunday
+2/9/2020 - 1 - Sunday
 ctrl + alt + l = autoformat
  import AddTodoBtn, { nums } from "./AddTodoBtn";   non-default requires { }; cannot have more than 1 default
 

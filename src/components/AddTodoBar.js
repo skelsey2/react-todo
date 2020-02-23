@@ -3,6 +3,7 @@ import AddTodoInput from './AddTodoInput'; //default
 import AddTodoBtn from "./AddTodoBtn";
 import TodoItem from "./TodoItem";   //non-default requires { }; cannot have more than 1 default
 import uuid from "uuid";
+import {CounterContainer} from "./counter";
 
 export default class AddTodoBar extends React.Component {
     constructor(props) {
@@ -79,6 +80,7 @@ export default class AddTodoBar extends React.Component {
 
                 <br/>
                 {divWrappedTodos}
+                <CounterContainer/>
             </React.Fragment>
         );
     }
